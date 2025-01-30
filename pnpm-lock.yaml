@@ -13,6 +13,9 @@ importers:
 
   .:
     dependencies:
+      '@apollo/client':
+        specifier: ^3.12.8
+        version: 3.12.8(graphql@16.10.0)
       '@unhead/vue':
         specifier: ^1.11.15
         version: 1.11.18(vue@3.5.13(typescript@5.7.3))

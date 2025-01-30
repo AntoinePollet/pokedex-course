@@ -17,6 +17,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@apollo/client": "^3.12.8",
     "@unhead/vue": "^1.11.15",
     "@vue/apollo-composable": "^4.2.1",
     "@vueuse/core": "^12.4.0",
