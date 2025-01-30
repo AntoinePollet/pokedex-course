@@ -14,7 +14,7 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: () => '/pokeball.ico',
+      href: () => '/favicon.ico',
     },
   ],
 })
