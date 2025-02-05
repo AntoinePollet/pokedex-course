@@ -1,16 +1,8 @@
 <script setup lang="ts">
-import { client } from '~/apollo'
-import { GET_POKEMONS } from '~/queries/pokemons'
+const { pokemons } = storeToRefs(usePokemonsStore())
+const { fetchPokemons } = usePokemonsStore()
 
-const pokemons = ref([])
 const loading = ref(true)
-
-async function fetchPokemons() {
-  const { data } = await client.query({
-    query: GET_POKEMONS,
-  })
-  pokemons.value = data.pokemon_v2_pokemon
-}
 
 onMounted(async () => {
   try {
@@ -19,7 +11,6 @@ onMounted(async () => {
   }
   catch {
     loading.value = false
-    console.error('Failed to fetch pokemons')
   }
 })
 </script>
