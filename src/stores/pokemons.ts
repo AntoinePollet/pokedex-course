@@ -1,12 +1,13 @@
+import type { GetPokemonsQuery, GetPokemonsQueryVariables } from '~/generated/graphql'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { client } from '~/apollo'
 import { GET_POKEMONS } from '~/queries/pokemons'
 
 export const usePokemonsStore = defineStore('pokemons', () => {
-  const pokemons = ref([])
+  const pokemons = ref<GetPokemonsQuery['pokemon_v2_pokemon']>([])
 
-  const fetchPokemons = async () => {
-    const { data } = await client.query({
+  async function fetchPokemons(): Promise<GetPokemonsQuery['pokemon_v2_pokemon']> {
+    const { data } = await client.query<GetPokemonsQuery, GetPokemonsQueryVariables>({
       query: GET_POKEMONS,
     })
     pokemons.value = data.pokemon_v2_pokemon

@@ -26,7 +26,7 @@ onMounted(async () => {
           <div class="font-bold text-primary">
             <template v-for="type in pokemon.pokemon_v2_pokemontypes" :key="type.id">
               <div class="badge badge-primary">
-                {{ type.pokemon_v2_type.name }}
+                {{ type.pokemon_v2_type?.name }}
               </div>
             </template>
           </div>
