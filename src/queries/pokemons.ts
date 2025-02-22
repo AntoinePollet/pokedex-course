@@ -14,3 +14,18 @@ export const GET_POKEMONS = gql`
     }
   }
 `
+
+export const GET_POKEMON_BY_ID = gql`
+  query getPokemon($id: Int) {
+    pokemon_v2_pokemon(where: { id: { _eq: $id } }) {
+      id
+      name
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
+          id
+        }
+      }
+    }
+  }
+`
