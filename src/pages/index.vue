@@ -5,7 +5,6 @@ import {
   BookOpen,
   Clock,
   Code2,
-  Database,
   Download,
   GitBranch,
   Globe,
@@ -21,11 +20,6 @@ import {
 const router = useRouter()
 
 const technicalConcepts = [
-  {
-    icon: Database,
-    title: 'Data Loaders',
-    description: 'Learn to efficiently manage and load data with optimized data loading patterns',
-  },
   {
     icon: Download,
     title: 'Lazy Loading',
