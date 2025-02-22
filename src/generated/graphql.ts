@@ -58775,7 +58775,17 @@ export type Subscription_RootPokemon_V2_Versionname_StreamArgs = {
   where?: InputMaybe<Pokemon_V2_Versionname_Bool_Exp>;
 };
 
-export type GetPokemonsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPokemonsQueryVariables = Exact<{
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+}>;
 
 
 export type GetPokemonsQuery = { __typename?: 'query_root', pokemon_v2_pokemon: Array<{ __typename?: 'pokemon_v2_pokemon', id: number, name: string, pokemon_v2_pokemontypes: Array<{ __typename?: 'pokemon_v2_pokemontype', pokemon_v2_type?: { __typename?: 'pokemon_v2_type', name: string, id: number } | null }> }> };
+
+export type GetPokemonQueryVariables = Exact<{
+  id?: InputMaybe<Scalars['Int']['input']>;
+}>;
+
+
+export type GetPokemonQuery = { __typename?: 'query_root', pokemon_v2_pokemon: Array<{ __typename?: 'pokemon_v2_pokemon', id: number, name: string, pokemon_v2_pokemontypes: Array<{ __typename?: 'pokemon_v2_pokemontype', pokemon_v2_type?: { __typename?: 'pokemon_v2_type', name: string, id: number } | null }> }> };
