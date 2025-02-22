@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { Pokemon_V2_Pokemon } from '~/generated/graphql'
-import { SparklesIcon } from 'lucide-vue-next'
+import { BugIcon, SparklesIcon } from 'lucide-vue-next'
 import { firstUppercase, pokemonShinySprite, pokemonSprite } from '~/utilities'
 
 const { pokemon } = defineProps<{
@@ -11,10 +11,20 @@ const isShiny = ref<boolean>(false)
 function toggleShiny() {
   isShiny.value = !isShiny.value
 }
+
+const target = useTemplateRef<HTMLDivElement>('target')
+const targetIsVisible = shallowRef(false)
+
+useIntersectionObserver(
+  target,
+  ([entry]) => {
+    targetIsVisible.value = entry?.isIntersecting || false
+  },
+)
 </script>
 
 <template>
-  <div class="card-body">
+  <div ref="target" class="card-body">
     <h2 class="card-title">
       {{ firstUppercase(pokemon.name) }}
       <div class="tooltip" data-tip="toogle shiny">
@@ -23,7 +33,8 @@ function toggleShiny() {
         </button>
       </div>
     </h2>
-    <img :src="isShiny ? pokemonShinySprite(pokemon.id) : pokemonSprite(pokemon.id)" :alt="pokemon.name">
+    <BugIcon v-if="!targetIsVisible" />
+    <img v-else :src="isShiny ? pokemonShinySprite(pokemon.id) : pokemonSprite(pokemon.id)" :alt="pokemon.name">
     <PokemonTypes :types="pokemon.pokemon_v2_pokemontypes" />
   </div>
 </template>
