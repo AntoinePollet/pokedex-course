@@ -4,6 +4,8 @@ import type { Pokemon_V2_Evolutionchain } from '~/generated/graphql'
 const { evolutions } = defineProps <{
   evolutions: Pokemon_V2_Evolutionchain
 }>()
+
+const router = useRouter()
 </script>
 
 <template>
@@ -17,7 +19,13 @@ const { evolutions } = defineProps <{
           This pokemon does not evolve
         </div>
         <template v-for="evolution in evolutions.pokemon_v2_pokemonspecies" v-else :key="evolution.id">
-          <PokemonCard :pokemon="evolution.pokemon_v2_pokemons[0]" />
+          <PokemonCard :pokemon="evolution.pokemon_v2_pokemons[0]">
+            <template #footer>
+              <button class="btn btn-sm" @click="router.push(`/pokemons/${evolution.id}`)">
+                See details
+              </button>
+            </template>
+          </pokemoncard>
         </template>
       </div>
     </div>

@@ -32,7 +32,7 @@ onMounted(async () => {
           <PokemonCard :pokemon="pokemon" />
           <PokemonAbility :abilities="pokemon.pokemon_v2_pokemonabilities" />
         </div>
-        <PokemonEvolutions :evolutions="pokemonEvolutions" />
+        <PokemonEvolutions v-if="pokemonEvolutions" :evolutions="pokemonEvolutions" />
       </div>
 
       <button class="btn btn-circle btn-sm absolute top-4 left-4" @click="router.push(`/pokemons/${Number(params.pokemonId) - 1}`)">
