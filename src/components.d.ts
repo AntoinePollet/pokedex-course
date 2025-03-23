@@ -10,6 +10,7 @@ declare module 'vue' {
     Pagination: typeof import('./components/Pagination.vue')['default']
     PokemonAbility: typeof import('./components/PokemonAbility.vue')['default']
     PokemonCard: typeof import('./components/PokemonCard.vue')['default']
+    PokemonEvolutions: typeof import('./components/PokemonEvolutions.vue')['default']
     PokemonTypes: typeof import('./components/PokemonTypes.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
