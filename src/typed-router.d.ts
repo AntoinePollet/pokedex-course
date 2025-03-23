@@ -22,7 +22,7 @@ declare module 'vue-router/auto-routes' {
     '/[...all]': RouteRecordInfo<'/[...all]', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
     '/pokemons/': RouteRecordInfo<'/pokemons/', '/pokemons', Record<never, never>, Record<never, never>>,
-    '/pokemons/[pokemoId]': RouteRecordInfo<'/pokemons/[pokemoId]', '/pokemons/:pokemoId', { pokemoId: ParamValue<true> }, { pokemoId: ParamValue<false> }>,
+    '/pokemons/[pokemonId]': RouteRecordInfo<'/pokemons/[pokemonId]', '/pokemons/:pokemonId', { pokemonId: ParamValue<true> }, { pokemonId: ParamValue<false> }>,
     '/README': RouteRecordInfo<'/README', '/README', Record<never, never>, Record<never, never>>,
   }
 }
