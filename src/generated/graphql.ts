@@ -58788,4 +58788,4 @@ export type GetPokemonQueryVariables = Exact<{
 }>;
 
 
-export type GetPokemonQuery = { __typename?: 'query_root', pokemon_v2_pokemon: Array<{ __typename?: 'pokemon_v2_pokemon', id: number, name: string, pokemon_v2_pokemontypes: Array<{ __typename?: 'pokemon_v2_pokemontype', pokemon_v2_type?: { __typename?: 'pokemon_v2_type', name: string, id: number } | null }> }> };
+export type GetPokemonQuery = { __typename?: 'query_root', pokemon_v2_pokemon: Array<{ __typename?: 'pokemon_v2_pokemon', id: number, name: string, pokemon_v2_pokemontypes: Array<{ __typename?: 'pokemon_v2_pokemontype', pokemon_v2_type?: { __typename?: 'pokemon_v2_type', name: string, id: number } | null }>, pokemon_v2_pokemonabilities: Array<{ __typename?: 'pokemon_v2_pokemonability', ability_id?: number | null, is_hidden: boolean, pokemon_v2_ability?: { __typename?: 'pokemon_v2_ability', name: string, pokemon_v2_abilityeffecttexts: Array<{ __typename?: 'pokemon_v2_abilityeffecttext', short_effect: string, effect: string }> } | null }> }> };
