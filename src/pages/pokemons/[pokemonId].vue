@@ -35,11 +35,11 @@ onMounted(async () => {
       </div>
 
       <button class="btn btn-circle btn-sm absolute top-4 left-4" @click="router.push(`/pokemons/${Number(params.pokemonId) - 1}`)">
-        <ArrowLeftIcon :size="16" @click="router.push(`/pokemons/${Number(params.pokemonId) - 1}`)" />
+        <ArrowLeftIcon :size="16" />
       </button>
 
       <button class="btn btn-circle btn-sm absolute top-4 right-4" @click="router.push(`/pokemons/${Number(params.pokemonId) + 1}`)">
-        <ArrowRightIcon :size="16" @click="router.push(`/pokemons/${Number(params.pokemonId) + 1}`)" />
+        <ArrowRightIcon :size="16" />
       </button>
     </div>
   </div>
