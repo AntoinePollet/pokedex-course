@@ -14,7 +14,7 @@ function toggleShiny() {
 </script>
 
 <template>
-  <div class="card-body">
+  <div class="card-body flex flex-col items-center">
     <h2 class="card-title">
       {{ firstUppercase(pokemon.name) }}
       <div class="tooltip" data-tip="toggle shiny">
@@ -23,7 +23,8 @@ function toggleShiny() {
         </button>
       </div>
     </h2>
-    <img :src="isShiny ? pokemonShinySprite(pokemon.id) : pokemonSprite(pokemon.id)" :alt="pokemon.name">
+    <img :src="isShiny ? pokemonShinySprite(pokemon.id) : pokemonSprite(pokemon.id)" :alt="pokemon.name" class="h-32 w-32">
     <PokemonTypes :types="pokemon.pokemon_v2_pokemontypes" />
+    <slot name="footer" />
   </div>
 </template>

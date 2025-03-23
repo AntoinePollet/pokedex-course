@@ -5,7 +5,7 @@ const router = useRouter()
 const route = useRoute()
 const params = computed(() => route.params) as ComputedRef<{ pokemonId: string }>
 const { fetchPokemon } = usePokemonsStore()
-const { pokemon } = storeToRefs(usePokemonsStore())
+const { pokemon, pokemonEvolutions } = storeToRefs(usePokemonsStore())
 
 const loading = ref(true)
 
@@ -29,9 +29,10 @@ onMounted(async () => {
     <div class="max-w-4xl mx-auto card shadow-lg rounded-xl relative">
       <div v-if="pokemon" class="card-body">
         <div class="flex">
-          <PokemonCard :pokemon="pokemon" class="" />
+          <PokemonCard :pokemon="pokemon" />
           <PokemonAbility :abilities="pokemon.pokemon_v2_pokemonabilities" />
         </div>
+        <PokemonEvolutions v-if="pokemonEvolutions" :evolutions="pokemonEvolutions" />
       </div>
 
       <button class="btn btn-circle btn-sm absolute top-4 left-4" @click="router.push(`/pokemons/${Number(params.pokemonId) - 1}`)">
