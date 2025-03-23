@@ -26,6 +26,17 @@ export const GET_POKEMON_BY_ID = gql`
           id
         }
       }
+      pokemon_v2_pokemonabilities {
+        ability_id
+        is_hidden
+        pokemon_v2_ability {
+          name
+          pokemon_v2_abilityeffecttexts(where: {language_id: {_eq: 9}}) {
+            short_effect
+            effect
+          }
+        }
+      }
     }
   }
 `

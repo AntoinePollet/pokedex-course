@@ -15,8 +15,13 @@ onMounted(async () => {
 
 <template>
   <div v-if="!loading" class="p-8">
-    <div class="max-w-2xl mx-auto">
-      <PokemonCard v-if="pokemon" :pokemon="pokemon" />
+    <div class="max-w-4xl mx-auto card shadow-lg rounded-xl">
+      <div v-if="pokemon" class="card-body">
+        <div class="flex">
+          <PokemonCard :pokemon="pokemon" class="" />
+          <PokemonAbility :abilities="pokemon.pokemon_v2_pokemonabilities" />
+        </div>
+      </div>
     </div>
   </div>
   <div v-else class="flex h-full justify-center items-center">
