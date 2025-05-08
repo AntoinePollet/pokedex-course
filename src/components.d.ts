@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    EvolutionsModal: typeof import('./components/modal/EvolutionsModal.vue')['default']
+    Modal: typeof import('./components/Modal.vue')['default']
     Pagination: typeof import('./components/Pagination.vue')['default']
     PokemonAbility: typeof import('./components/PokemonAbility.vue')['default']
     PokemonCard: typeof import('./components/PokemonCard.vue')['default']

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { Pokemon_V2_Evolutionchain } from '~/generated/graphql'
 
-const { evolutions } = defineProps <{
+const { evolutions, noTitle = false } = defineProps <{
   evolutions: Pokemon_V2_Evolutionchain
+  noTitle?: boolean
 }>()
 
 const router = useRouter()
@@ -11,7 +12,7 @@ const router = useRouter()
 <template>
   <div class="card">
     <div class="card-body">
-      <h2 class="card-title">
+      <h2 v-if="!noTitle" class="card-title">
         Evolutions
       </h2>
       <div class="flex">

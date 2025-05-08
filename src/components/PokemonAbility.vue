@@ -12,7 +12,7 @@ const { abilities } = defineProps<{
       <h2 class="card-title">
         Abilities
       </h2>
-      <div v-for="ability in abilities" :key="ability.id" class="space-y-4 [&:not(:first-child)]:mt-4">
+      <div v-for="ability in abilities" :key="ability.id" class="space-y-4 not-first:mt-4">
         <h3 class="card-title text-secondary">
           {{ ability.pokemon_v2_ability!.name }}
         </h3>
