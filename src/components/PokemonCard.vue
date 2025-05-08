@@ -18,7 +18,7 @@ function toggleShiny() {
     <h2 class="card-title">
       {{ firstUppercase(pokemon.name) }}
       <div class="tooltip" data-tip="toggle shiny">
-        <button class="btn btn-ghost btn-sm btn-circle" @click="toggleShiny">
+        <button class="btn btn-ghost btn-sm btn-circle" @click.stop="toggleShiny">
           <SparklesIcon :size="16" />
         </button>
       </div>

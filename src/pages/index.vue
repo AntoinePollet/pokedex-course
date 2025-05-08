@@ -137,7 +137,7 @@ const courseData = {
         <h2 class="text-3xl font-bold text-center mb-12">
           <Blocks class="w-12 h-12 mb-4 mx-auto" />
           Technology Stack
-          <div class="text-center text-primary underline cursor-pointer !text-md" @click="router.push('/pokemons')">
+          <div class="text-center text-primary underline cursor-pointer text-md!" @click="router.push('/pokemons')">
             View project
           </div>
         </h2>
@@ -157,7 +157,7 @@ const courseData = {
                   :key="item.name"
                   class="flex items-start gap-3"
                 >
-                  <Code2 class="w-6 h-6 flex-shrink-0 mt-1" />
+                  <Code2 class="w-6 h-6 shrink-0 mt-1" />
                   <div>
                     <h4 class="font-bold">
                       {{ item.name }}
