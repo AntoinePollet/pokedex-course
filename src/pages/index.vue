@@ -210,8 +210,6 @@ const courseData = {
 </template>
 
 <style scoped>
-@import '../styles/main.css';
-
 .stat {
   @apply bg-primary p-4 rounded-lg;
 }
